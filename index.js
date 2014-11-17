@@ -49,7 +49,7 @@ module.exports = function (options) {
 				return cb(new gutil.PluginError('gulp-jekyll', 'Exited with error code ' + code));
 			}
 
-			cb(null, null);
+			cb(null, file);
 
 		});
 	});
