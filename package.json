@@ -1,6 +1,6 @@
 {
   "name": "@boneskull/gulp-jekyll",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Compile Jekyll sites with Gulp.",
   "license": "MIT",
   "repository": "boneskull/gulp-jekyll",

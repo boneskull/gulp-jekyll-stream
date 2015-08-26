@@ -4,6 +4,8 @@
 
 This is heavily based on [gulp-ruby-sass](https://github.com/sindresorhus/gulp-ruby-sass)
 
+**Forked from [gulp-jekyll](https://www.npmjs.com/package/gulp-jekyll) and namespaced as `@boneskull/gulp-jekyll`**
+
 ## Status
 
 Alpha: Currently still in development – runs with basic configuration (see example below).
