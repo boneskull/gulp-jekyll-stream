@@ -1,6 +1,15 @@
 language: node_js
 node_js:
+  - 'iojs'
+  - '0.12'
   - '0.10'
-before_install:
-  - gem update --system
-  - gem install jekyll
+#before_install:
+#  - gem update --system
+#  - gem install jekyll
+notifications:
+email: false
+pushover:
+  api_key: HIhKT2ryLXlFAlNPsOTtQeYSskdkoubmvqVn4JcS5ZT/0c+wuO2g5HlOmQH4uX3tRlr3IQKRJhC637qDHBvEbpbWuP2/d5F4aOaKjntA6cy2l8GAVCI+FPm6lN8w5Ko+SDj8XokitMNG1zPcBru+4//Yy2itSJdZ0EyeURxOKjY=
+  users:
+    - secure: SGFaNA0MNpmknRYXrn/XmGhB4U8YogEUFjxgA7KOp0J316Y1GX2euwcU/cimCHaVXMnDlOBj+f6xWTK7p/sk8zOMe2arOYvjBnGbIJujUHrPn7lh1n3erbTXUFtHAls9p5tfC8dq8ApRaoPy2OLgGm/L3RYttPxy1QLb3Hw/wK4=
+
