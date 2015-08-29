@@ -1,6 +1,5 @@
 env:
   node: true
-
 rules:
   # errors
   comma-dangle: 2
@@ -204,7 +203,9 @@ rules:
   operator-linebreak:
     - 2
     - after
-  padded-blocks: 0
+  padded-blocks:
+    - 2
+    - never
   quote-props: 0
   quotes: 0
   id-match: 0
@@ -233,7 +234,7 @@ rules:
   spaced-comment: 1
   wrap-regex: 0
 
-  # es6 TODO
+  # backwards compat
   max-len:
     - 2
     - 80
@@ -242,6 +243,3 @@ rules:
     - 4
   no-bitwise: 1
   no-plusplus: 0
-
-globals:
-  Promise: true

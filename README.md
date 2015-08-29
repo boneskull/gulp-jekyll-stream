@@ -2,20 +2,22 @@
 
 > Compile Jekyll sites with Gulp.
 
-This is heavily based on [gulp-ruby-sass](https://github.com/sindresorhus/gulp-ruby-sass)
-
 **Forked from [gulp-jekyll](https://www.npmjs.com/package/gulp-jekyll) and namespaced as `@boneskull/gulp-jekyll`**
 
+## Example
+
+```js
+var gulp = require('gulp');
+var jekyll = require('gulp-jekyll');
+
+gulp.task('default', function () {
+  return gulp.src('index.html')
+    .pipe(jekyll())
+    .pipe(gulp.dest('./deploy/'));
+});
+```
+
 ## Status
-
-Alpha: Currently still in development – runs with basic configuration (see example below).
-
-### TODO:
-
-- [ ] Mocha Tests
-- [ ] Complete CI Setup
-- [ ] Fully implement all CLI options.
-- [ ] Document Options
 
 ## Install
 
@@ -25,22 +27,6 @@ Install with [npm](https://npmjs.org/package/gulp-jekyll)
 npm install --save-dev gulp-jekyll
 ```
 
-## Example
-
-```js
-var gulp = require('gulp');
-var jekyll = require('gulp-jekyll');
-
-gulp.task('default', function () {
-	return gulp.src(['./index.html', './_layouts/*.html', './_posts/*.{markdown,md}'])
-			.pipe(jekyll({
-				source: './',
-				destination: './deploy/',
-				bundleExec: true
-			}))
-			.pipe(gulp.dest('./deploy/'));
-});
-```
 ## Changelog
 
 - v0.0.0: Initial Release

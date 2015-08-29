@@ -16,11 +16,10 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "files": [
-    "index.js"
-  ],
+  "main": "lib/index.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "prepublish": "node scripts/prepublish"
   },
   "keywords": [
     "gulpplugin",
@@ -33,9 +32,11 @@
   "dependencies": {
     "dargs": "^4.0.1",
     "gulp-util": "^3.0.6",
-    "map-stream": "0.0.6",
+    "lodash.defaults": "^3.1.2",
     "temp-write": "^1.1.2",
-    "win-spawn": "^2.0.0"
+    "through2": "^2.0.0",
+    "vinyl-fs": "^1.0.0",
+    "which": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^1.2.1"
