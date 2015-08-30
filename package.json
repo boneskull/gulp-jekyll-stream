@@ -1,6 +1,6 @@
 {
-  "name": "@boneskull/gulp-jekyll",
-  "version": "0.1.1",
+  "name": "gulp-jekyll-stream",
+  "version": "0.1.0",
   "description": "Compile Jekyll sites with Gulp.",
   "license": "MIT",
   "repository": "boneskull/gulp-jekyll",
@@ -24,15 +24,16 @@
   "keywords": [
     "gulpplugin",
     "gulp",
-    "gulp-plugin",
     "jekyll",
     "compile",
     "ruby"
   ],
   "dependencies": {
+    "async": "^1.4.2",
     "dargs": "^4.0.1",
     "gulp-util": "^3.0.6",
     "lodash.defaults": "^3.1.2",
+    "temp": "boneskull/node-temp#namespaced",
     "temp-write": "^1.1.2",
     "through2": "^2.0.0",
     "vinyl-fs": "^1.0.0",

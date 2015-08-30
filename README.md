@@ -1,48 +1,64 @@
-# [gulp](https://github.com/wearefractal/gulp)-jekyll
+# gulp-jekyll-stream [![Build Status](https://travis-ci.org/boneskull/gulp-jekyll-stream.svg?branch=master)](https://travis-ci.org/boneskull/gulp-jekyll-stream)
 
-> Compile Jekyll sites with Gulp.
+> Stream a compiled Jekyll site with Gulp
 
-**Forked from [gulp-jekyll](https://www.npmjs.com/package/gulp-jekyll) and namespaced as `@boneskull/gulp-jekyll`**
+**Forked from [gulp-jekyll](https://www.npmjs.com/package/gulp-jekyll)**
 
 ## Example
+
+Example `gulpfile.js`, shown with defaults:
 
 ```js
 var gulp = require('gulp');
 var jekyll = require('gulp-jekyll');
 
-gulp.task('default', function () {
-  return gulp.src('index.html')
-    .pipe(jekyll())
-    .pipe(gulp.dest('./deploy/'));
+gulp.task('default', function() {
+  return gulp.src(process.cwd())     // where your site source lives; this is
+    .pipe(jekyll({
+      bundleExec: false,             // exec jekyll w/ "bundle exec"
+      quiet: true,                   // suppress jekyll output; implies "--trace"
+      safe: false,                   // run Jekyll in "safe" mode     
+      cwd: process.cwd(),            // below paths will be relative to this
+      layouts: '_layouts',           // where your layouts live
+      plugins: '_plugins'            // where your plugins live
+      // source: '/path/to/source'   // overrides gulp.src() above
+      // destination: '_site'        // can be used instead of gulp.dest()
+    ))
+    .pipe(gulp.dest('_site'));
 });
 ```
 
-## Status
+If you are using GitHub Pages with the [recommended method](https://help.github.com/articles/using-jekyll-with-pages/), then you'll want `bundleExec: true`.
+
+## vs. `gulp-jekyll`
+
+You'd want to use this package instead of `gulp-jekyll` if you want to pipe Jekyll's output somewhere.
+
+The main differences are:
+
+- You must provide a *directory path* using `gulp.src()` (or the `source` property) to the plugin; Jekyll operates on *entire directories*; not files!
+- The output of this stream is all the files which Jekyll generated
+- If you neglect to pipe this plugin's output, and *do not specify* the `destination` property, the generated site disappears into the ether
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-jekyll)
+### Prerequisites
+
+- Some version of [Ruby](http://www.ruby-lang.org)
+- Some version of [Jekyll](http://jekyllrb.com)
 
 ```
-npm install --save-dev gulp-jekyll
+npm install --save-dev gulp-jekyll-stream gulp
 ```
 
-## Changelog
+## History
 
-- v0.0.0: Initial Release
+- v0.1.0: Initial Release
 
-## MIT License
+## Author
 
-gulp-jekyll is freely distributable under the terms of the MIT license.
+[Christopher Hiller](https://boneskull.com), based on code by [Danny Garcia](http://danny-garcia.com).
 
-Copyright (c) 2012, Danny Garcia. All rights reserved.
+## License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dannygarcia/gulp-jekyll/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+MIT
