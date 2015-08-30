@@ -1,9 +1,9 @@
 {
   "name": "gulp-jekyll-stream",
   "version": "0.1.0",
-  "description": "Compile Jekyll sites with Gulp.",
+  "description": "Stream a compiled Jekyll site with Gulp",
   "license": "MIT",
-  "repository": "boneskull/gulp-jekyll",
+  "repository": "boneskull/gulp-jekyll-stream",
   "author": {
     "name": "Danny Garcia",
     "email": "contact@danny-garcia.com",
