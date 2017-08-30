@@ -3,3 +3,4 @@ bower_components/
 support/
 vendor/
 node_modules/
+test/fixture/**/*.js
