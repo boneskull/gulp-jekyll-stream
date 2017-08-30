@@ -22,7 +22,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint .",
-    "prepublish": "node scripts/prepublish"
+    "postinstall": "node scripts/install-check"
   },
   "keywords": [
     "gulpplugin",
