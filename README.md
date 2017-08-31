@@ -59,6 +59,7 @@ npm install gulp-jekyll-stream gulp -D
 
 ## History
 
+- v1.0.1: Update `README.md` :wink:
 - v1.0.0:
   - New features:
     - Support any and all `jekyll` command-line options
